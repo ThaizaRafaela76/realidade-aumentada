@@ -16,6 +16,19 @@
       <a-entity camera></a-entity>
     </a-scene>
   </body>
+  <script>
+      // Assim que o marcador for detectado, forçamos a reprodução do vídeo
+      const marcador = document.querySelector("#meuMarcador");
+      const video = document.querySelector("#videolindo");
+
+      marcador.addEventListener("markerFound", () => {
+        if (video && video.paused) {
+          video.play().catch(err => {
+            console.warn("Erro ao iniciar o vídeo automaticamente:", err);
+          });
+        }
+      });
+    </script>
 </html>
 
 
