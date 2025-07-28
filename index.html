@@ -10,15 +10,15 @@
     <video id="videolindo" src="modelo3d.mp4" autoplay loop crossorigin="anonymous" playsinline webkit-playsinline muted style="display: none;"></video>
     </a-assets>
     <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false">
-      <a-marker id="meuMarcador" type="pattern" url="pattern-hiroTeste.patt">
-        <a-video src="#videolindo" position="0 0.5 0" rotation="-90 180 0" width="1.7" scale="1 -1 1"></a-video>
+      <a-marker id="marcadorHiro" type="pattern" url="pattern-hiroTeste.patt">
+        <a-video src="#videolindo" position="0 0.5 0" rotation="-90 -180 0" width="1.7" scale="1 -1 1"></a-video>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
   </body>
   <script>
       // Assim que o marcador for detectado, forçamos a reprodução do vídeo
-      const marcador = document.querySelector("#meuMarcador");
+      const marcador = document.querySelector("#marcadorHiro");
       const video = document.querySelector("#videolindo");
 
       marcador.addEventListener("markerFound", () => {
